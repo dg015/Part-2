@@ -18,7 +18,8 @@ public class Plane : MonoBehaviour
     private float landingTimer;
     [SerializeField] CircleCollider2D colider;
     [SerializeField] SpriteRenderer spriteRenderer;
-
+    public bool landing = false;
+    
      void Start()
     {
             
@@ -26,6 +27,7 @@ public class Plane : MonoBehaviour
         lineRenderer.positionCount = 1;
         lineRenderer.SetPosition(0,transform.position);
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
 
@@ -75,23 +77,31 @@ public class Plane : MonoBehaviour
     }
 
 
-
-    private void Update()
+    private void land()
     {
-
-        if(Input.GetKey(KeyCode.Space)) 
+        if (landing)
         {
+            speed = 0;
             landingTimer += 0.1f * Time.deltaTime;
             float interpolation = curve.Evaluate(landingTimer);
             if (transform.localScale.z < 0.1f)
             {
-
+                
                 Destroy(gameObject);
-            
+                
             }
 
-            transform.localScale = Vector3.Lerp(Vector3.one,Vector3.zero,interpolation);
+            transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, interpolation);
+
         }
+
+
+    }
+
+
+    private void Update()
+    {
+        land();
 
         if (lineRenderer.positionCount > 0)
             lineRenderer.SetPosition(0, transform.position); 

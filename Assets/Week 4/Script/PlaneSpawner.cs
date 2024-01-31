@@ -14,7 +14,7 @@ public class PlaneSpawner : MonoBehaviour
     [SerializeField] private float positionRandom;
     [SerializeField] private float rotationRandom;
     [SerializeField] private Vector3 position;
-
+    public int score;
     [SerializeField] private Sprite[] sprites;
     // Start is called before the first frame update
     void Start()
