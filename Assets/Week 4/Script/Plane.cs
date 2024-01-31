@@ -16,6 +16,8 @@ public class Plane : MonoBehaviour
     public float speed = 1;
     public AnimationCurve curve;
     private float landingTimer;
+    [SerializeField] CircleCollider2D colider;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
      void Start()
     {
@@ -40,6 +42,30 @@ public class Plane : MonoBehaviour
         rb.MovePosition(rb.position + (Vector2)transform.up  * speed * Time.deltaTime );
 
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if ( collision.CompareTag("Detection range"))
+        {
+            spriteRenderer.color = Color.red;
+            if (Vector3.Distance(transform.position , collision.transform.position) >=0.1f)
+            {
+            
+               Destroy(this.gameObject);
+            
+            }
+
+        }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        spriteRenderer.color = Color.white;
+    }
+
+
 
     private void Update()
     {
