@@ -49,15 +49,24 @@ public class Plane : MonoBehaviour
         if ( collision.CompareTag("Detection range"))
         {
             spriteRenderer.color = Color.red;
-            if (Vector3.Distance(transform.position , collision.transform.position) >=0.1f)
-            {
-            
-               Destroy(this.gameObject);
-            
-            }
 
         }
         
+    }
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Detection range"))
+        {
+            if (Vector3.Distance(transform.position, collision.transform.position) <= 0.5f)
+            {
+
+                Destroy(this.gameObject);
+
+            }
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -84,7 +93,8 @@ public class Plane : MonoBehaviour
             transform.localScale = Vector3.Lerp(Vector3.one,Vector3.zero,interpolation);
         }
 
-        lineRenderer.SetPosition(0, transform.position);
+        if (lineRenderer.positionCount > 0)
+            lineRenderer.SetPosition(0, transform.position); 
         if (points.Count > 0)
         {
 
