@@ -36,13 +36,24 @@ public class Knight : MonoBehaviour
 
         rb.MovePosition(rb.position + movement.normalized * speed * Time.deltaTime);
     }
-    // Update is called once per frame
+
+    void attack()
+    {
+
+        animator.SetTrigger("Attack");
+
+    }
+
     void Update()
     {
         if (dead) return;
         if (Input.GetMouseButtonDown(0) && !clickingSelf)
         {
             destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+        if (Input.GetMouseButtonDown(1) && !clickingSelf)
+        {
+            attack();
         }
         animator.SetFloat("movement", movement.magnitude);
     }
