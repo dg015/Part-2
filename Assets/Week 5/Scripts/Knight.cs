@@ -14,6 +14,7 @@ public class Knight : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
     [SerializeField] private bool dead= false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,13 +50,14 @@ public class Knight : MonoBehaviour
     {
         if (dead) return;
         clickingSelf = true;
+        SendMessage("takeDamage",1);
         damage(1);
     }
     private void OnMouseUp()
     {
         clickingSelf = false;
     }
-    private void damage(float damage)
+    public void damage(float damage)
     {
         health -= damage;
         health = Mathf.Clamp(health, 0, maxHealth);
