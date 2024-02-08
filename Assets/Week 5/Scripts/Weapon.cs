@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
 
     public void FixedUpdate()
     {
-        rb.MovePosition(rb.position + Vector2.right * Time.deltaTime);
+        rb.MovePosition(rb.position + Vector2.left * Time.deltaTime * 5);
     }
  
     public void OnTriggerEnter2D(Collider2D collision)
