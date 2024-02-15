@@ -17,13 +17,13 @@ public class Week5Scene : MonoBehaviour
 
     public void Ratio()
     {
-        Debug.Log("yooooo");
+        
         Screen.SetResolution(1280,720,false);
     }
 
     public void FullHD()
     {
-        Debug.Log("yooooo");
+        
         Screen.SetResolution(1920, 1080, false);
     }
 }
