@@ -8144,6 +8144,40 @@ MonoBehaviour:
   health: 5
   dead: 0
   CurrentSpeed: {x: 0, y: 0}
+  LastPosition: {x: 0, y: 0, z: 0}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.51371574
+      value: 1.0125036
+      inSlope: 0.026881749
+      outSlope: 0.026881749
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.16047104
+      outWeight: 0.12822121
+    - serializedVersion: 3
+      time: 1.0000062
+      value: 0.00000942871
+      inSlope: -2.5464203
+      outSlope: -2.5464203
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10296581
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   rb: {fileID: 647071508}
   slider: {fileID: 2114585393}
   dir: {x: 0, y: 0}

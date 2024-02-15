@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,9 @@ public class PointClickMover : MonoBehaviour
     [SerializeField] public bool dead = false;
     [SerializeField] private Vector2 CurrentSpeed;
     [SerializeField] private Vector3 LastPosition;
+    float timer = 0 ;
+
+    public AnimationCurve curve;
 
     [SerializeField] private Rigidbody2D rb;
     public Slider slider;
@@ -37,9 +41,38 @@ public class PointClickMover : MonoBehaviour
             dead = true;    
         }
     }
+
+
+    private void CurveAnimation()
+    {
+        
+        timer += Time.deltaTime;
+        if (timer >= 1)
+        {
+            timer = 0;
+        }
+
+        if (CurrentSpeed.magnitude > 0.5)
+        {
+            Vector2 newScale = new Vector2(1.15f, 1.15f);
+            Vector2 normalScale = new Vector2(1f, 1f);
+            float value = curve.Evaluate(timer);
+            transform.localScale = Vector2.Lerp(newScale, normalScale, value);
+            Debug.Log("pato pato");
+        }
+        else
+        {
+            transform.localScale = new Vector2(1f, 1f);
+
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
+        CurveAnimation();
+
         transform.position = Vector3.Lerp(transform.position, GoTo, Time.deltaTime * 2);
         dir = (transform.position - GoTo).normalized;
         
