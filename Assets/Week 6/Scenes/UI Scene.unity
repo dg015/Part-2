@@ -207,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -385,8 +385,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -29.548218, y: -113.4}
-  m_SizeDelta: {x: 311.4518, y: 52.7252}
+  m_AnchoredPosition: {x: -29.548218, y: -272.37808}
+  m_SizeDelta: {x: 563.6271, y: 119.9882}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &87480959
 MonoBehaviour:
@@ -431,7 +431,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 87480960}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477904544}
+        m_TargetAssemblyTypeName: Week5Scene, Assembly-CSharp
+        m_MethodName: FullHD
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &87480960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,7 +464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: f6609bc21dd85c84d83a2c67b7ba6770, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -518,12 +530,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -599,7 +611,7 @@ RectTransform:
   m_GameObject: {fileID: 357185900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 639429771}
@@ -790,8 +802,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -876,8 +888,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -29.548218, y: 167.00177}
-  m_SizeDelta: {x: 311.4518, y: 75.9965}
+  m_AnchoredPosition: {x: -38, y: 352}
+  m_SizeDelta: {x: 552.84, y: 138.966}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &639429772
 MonoBehaviour:
@@ -922,7 +934,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 639429773}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477904544}
+        m_TargetAssemblyTypeName: Week5Scene, Assembly-CSharp
+        m_MethodName: LoadWeek5Scene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &639429773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,7 +967,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 82376fe4ec9e0b94caf69a9323cde4ad, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -997,8 +1021,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -29.548218, y: -165.35919}
-  m_SizeDelta: {x: 311.4518, y: 52.7252}
+  m_AnchoredPosition: {x: -29.548218, y: -390.623}
+  m_SizeDelta: {x: 563.6271, y: 119.9882}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &746019688
 MonoBehaviour:
@@ -1076,7 +1100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: f6609bc21dd85c84d83a2c67b7ba6770, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1178,8 +1202,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1266,8 +1290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -21.552124, y: -0.000002861023}
-  m_SizeDelta: {x: 403.5255, y: 453.8139}
+  m_AnchoredPosition: {x: -70, y: 5.725}
+  m_SizeDelta: {x: 638.486, y: 1014.813}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &850159502
 MonoBehaviour:
@@ -1289,8 +1313,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 1296e5c07581dd148b3065fd29779f18, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1343,8 +1367,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -29.548218, y: -60.6}
-  m_SizeDelta: {x: 311.4518, y: 52.7252}
+  m_AnchoredPosition: {x: -29.548218, y: -152.21977}
+  m_SizeDelta: {x: 563.6271, y: 119.9882}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1006586432
 MonoBehaviour:
@@ -1389,7 +1413,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1006586433}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1477904544}
+        m_TargetAssemblyTypeName: Week5Scene, Assembly-CSharp
+        m_MethodName: Ratio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1006586433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1410,7 +1446,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: f6609bc21dd85c84d83a2c67b7ba6770, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1507,7 +1543,7 @@ GameObject:
   - component: {fileID: 1477904545}
   - component: {fileID: 1477904544}
   m_Layer: 0
-  m_Name: Change week5 Scene
+  m_Name: Scene setter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1556,7 +1592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1729542052
 SpriteRenderer:
   m_ObjectHideFlags: 0
