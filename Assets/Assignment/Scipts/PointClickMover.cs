@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,6 +45,26 @@ public class PointClickMover : MonoBehaviour
     }
 
 
+    private void takeDamage(int damage)
+    {
+        health -= damage;
+
+
+    }
+
+
+    private void death()
+    {
+        if (health <= 0)
+        {
+            Debug.Log("death");
+
+
+        }
+
+
+    }
+
     private void CurveAnimation()
     {
         
@@ -58,7 +80,7 @@ public class PointClickMover : MonoBehaviour
             Vector2 normalScale = new Vector2(1f, 1f);
             float value = curve.Evaluate(timer);
             transform.localScale = Vector2.Lerp(newScale, normalScale, value);
-            Debug.Log("pato pato");
+            
         }
         else
         {
@@ -71,6 +93,7 @@ public class PointClickMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        death();
         CurveAnimation();
 
         transform.position = Vector3.Lerp(transform.position, GoTo, Time.deltaTime * 2);

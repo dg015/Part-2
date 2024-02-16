@@ -23,22 +23,29 @@ public class EnemyPointClick : MonoBehaviour
     void Update()
     {
         chase();
+        
     }
 
 
     private void chase()
     {
         direction = player.position - transform.position;
-        if (direction.magnitude < 15)
-        {
-            faceRotation = Mathf.Atan2(direction.y, direction.x) *Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, faceRotation);
-            transform.Translate(distance * Time.deltaTime * speed);
-        
+        distance = player.position - transform.position;
+        faceRotation = Mathf.Atan2(direction.y, direction.x) *Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, faceRotation);
+        transform.Translate(distance * Time.deltaTime * speed);
 
-        }
 
 
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        collision.SendMessage("takeDamage", 1);
+        Debug.Log("damage");
+    }
+    
 
 }
