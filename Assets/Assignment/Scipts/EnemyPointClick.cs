@@ -8,7 +8,7 @@ public class EnemyPointClick : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private float speed;
-    [SerializeField] private int health;
+    [SerializeField] private int health = 3;
     [SerializeField] private int deamage;
     [SerializeField] private Vector2 distance;
     [SerializeField] private Vector3 direction;
@@ -23,7 +23,7 @@ public class EnemyPointClick : MonoBehaviour
     void Update()
     {
         chase();
-        
+        die();
     }
 
 
@@ -46,6 +46,17 @@ public class EnemyPointClick : MonoBehaviour
         collision.SendMessage("takeDamage", 1);
         Debug.Log("damage");
     }
-    
+
+    private void die()
+    {
+        if ( health <= 0)
+        {
+            Destroy(this.gameObject);
+
+
+
+
+        }
+    }
 
 }

@@ -30,9 +30,8 @@ public class EnemySpawnerPointClick : MonoBehaviour
     private void spawn()
     {
         Instantiate(enemy);
-
-
-
     }
+
+
 
 }
