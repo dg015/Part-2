@@ -27,6 +27,8 @@ public class EnemyPointClick : MonoBehaviour
     }
 
 
+
+
     private void chase()
     {
         direction = player.position - transform.position;

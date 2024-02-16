@@ -11,12 +11,14 @@ using UnityEngine.UI;
 
 public class PointClickMover : MonoBehaviour
 {
-    [SerializeField] private Vector3 Coordinates;
-    [SerializeField] private Vector3 GoTo;
+    private Vector3 Coordinates;
+    private Vector3 GoTo;
     [SerializeField] public int health = 5;
-    [SerializeField] public bool dead = false;
-    [SerializeField] private Vector2 CurrentSpeed;
-    [SerializeField] private Vector3 LastPosition;
+    public bool dead = false;
+    private Vector2 CurrentSpeed;
+    private Vector3 LastPosition;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private Transform gunPos;
     float timer = 0 ;
 
     public AnimationCurve curve;
@@ -94,6 +96,7 @@ public class PointClickMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shooting();
         death();
         CurveAnimation();
 
@@ -121,10 +124,36 @@ public class PointClickMover : MonoBehaviour
         LastPosition = transform.position;
     }
 
-    private void FixedUpdate()
+    private void shooting()
     {
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            Instantiate(bullet, gunPos.position, Quaternion.Euler(0, 0, 0));
 
 
+        }
 
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            
+            //gunPos.transform.position = new Vector3(-0.376f,0 , 0);
+            
+            Instantiate(bullet, gunPos.position, Quaternion.Euler(0, 0, 90));
+
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+
+
+            Instantiate(bullet, gunPos.position, Quaternion.Euler(0, 0, 180));
+
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            
+
+            Instantiate(bullet, gunPos.position, Quaternion.Euler(0, 0,270));
+
+        }
     }
 }
