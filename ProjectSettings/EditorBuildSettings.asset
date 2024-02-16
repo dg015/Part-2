@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Week 5/Scenes/Week 5.unity
     guid: dbc878d7ab8e4574c9591d384c72ff04
+  - enabled: 1
+    path: Assets/Assignment/Scenes/Assignment.unity
+    guid: 727da7e4cab52994691b427ce36446ba
+  - enabled: 1
+    path: Assets/Assignment/Scenes/Death Screen.unity
+    guid: 94953e39247f98a449ac00551286df37
   m_configObjects: {}
