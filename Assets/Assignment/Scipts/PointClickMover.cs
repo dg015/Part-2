@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -58,7 +59,7 @@ public class PointClickMover : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("death");
-
+            SceneManager.LoadScene("Death Screen");
 
         }
 
