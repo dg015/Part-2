@@ -10,8 +10,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class SceneChangerPointClick : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI scoreText;
-    public int score;
+
 
    public void ChangeScene()
     {

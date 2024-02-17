@@ -11,21 +11,27 @@ using UnityEngine.UI;
 
 public class PointClickMover : MonoBehaviour
 {
-    private Vector3 Coordinates;
+
     private Vector3 GoTo;
+    
     [SerializeField] public int health = 5;
     public bool dead = false;
+
     private Vector2 CurrentSpeed;
     private Vector3 LastPosition;
+
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform gunPos;
-    float timer = 0 ;
 
+    float timer = 0 ;
     public AnimationCurve curve;
 
     [SerializeField] private Rigidbody2D rb;
+
     public Slider slider;
+
     public Vector2 dir;
+
     public Animator animator;
     // Start is called before the first frame update
     void Start()
