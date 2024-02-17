@@ -12,23 +12,10 @@ public class SceneChangerPointClick : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
     public int score;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        PlayerPrefs.GetInt("Score", score);
-        scoreText.text = "score:" + score;
-
-    }
-
 
    public void ChangeScene()
     {
+        //change scene to gameplay
         SceneManager.LoadScene("Assignment");
     }
 }

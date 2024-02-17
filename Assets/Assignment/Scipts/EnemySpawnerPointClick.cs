@@ -18,6 +18,7 @@ public class EnemySpawnerPointClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //after timer reaches 0 spawn enemy 
         currentTime += Time.deltaTime;
         if (currentTime >= TimerLimit)
         {
@@ -29,6 +30,7 @@ public class EnemySpawnerPointClick : MonoBehaviour
 
     private void spawn()
     {
+        //spawn enemy on spawner position
         Instantiate(enemy,transform.position, Quaternion.Euler(0, 0, 0));
     }
 

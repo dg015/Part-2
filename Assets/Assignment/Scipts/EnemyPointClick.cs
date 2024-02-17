@@ -18,6 +18,7 @@ public class EnemyPointClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //find player transform and score script
         player = GameObject.Find("Player").GetComponent<Transform>();
         Score = GameObject.Find("Score manage").GetComponent<ScoreManager>();
     }
@@ -34,16 +35,17 @@ public class EnemyPointClick : MonoBehaviour
 
     private void chase()
     {
-        direction = player.position - transform.position;
-        distance = player.position - transform.position;
-        faceRotation = Mathf.Atan2(direction.y, direction.x) *Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, faceRotation);
-        transform.Translate(distance * Time.deltaTime * speed);
+        //walk directly to player
+        direction = player.position - transform.position; // find direction between player and enemy ( distance as well)
+        faceRotation = Mathf.Atan2(direction.y, direction.x) *Mathf.Rad2Deg; // get the angle from the enemy to player and apply as degrees
+        transform.rotation = Quaternion.Euler(0f, 0f, faceRotation); // apply angle as rotation
+        transform.Translate(direction * Time.deltaTime * speed); // make enemy walk towards player based on speed
     }
 
 
     public void takeDamageEnemy(int damage)
     { 
+        //Enemy take damage function
         health -= damage;
         Debug.Log("enemy damage");
     
@@ -51,14 +53,14 @@ public class EnemyPointClick : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        //enemy deal damage to palyer upon colision 
         collision.SendMessage("takeDamage", 1);
         Debug.Log("damage");
     }
 
     private void die()
     {
-        
+        // if health is 0 remove enemy object and add 1 point
         if ( health <= 0)
         {
             Score.addScore(1);
