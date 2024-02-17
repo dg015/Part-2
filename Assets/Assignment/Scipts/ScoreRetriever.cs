@@ -3,32 +3,24 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SearchService;
-using UnityEngine.SceneManagement;
-using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
 
-public class SceneChangerPointClick : MonoBehaviour
+public class ScoreRetriever : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
-    public int score;
+    [SerializeField] int score;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerPrefs.GetInt("Score", score);
+        scoreText = GameObject.Find("score").GetComponent<TextMeshProUGUI>();
+        score = PlayerPrefs.GetInt("Score");
         scoreText.text = "score:" + score;
-
-    }
-
-
-   public void ChangeScene()
-    {
-        SceneManager.LoadScene("Assignment");
     }
 }

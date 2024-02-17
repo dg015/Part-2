@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class EnemyPointClick : MonoBehaviour
 {
@@ -13,10 +14,12 @@ public class EnemyPointClick : MonoBehaviour
     [SerializeField] private Vector2 distance;
     [SerializeField] private Vector3 direction;
     [SerializeField] private float faceRotation;
+    [SerializeField] private ScoreManager Score;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Transform>();
+        Score = GameObject.Find("Score manage").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -55,8 +58,10 @@ public class EnemyPointClick : MonoBehaviour
 
     private void die()
     {
+        
         if ( health <= 0)
         {
+            Score.addScore(1);
             Destroy(this.gameObject);
             Debug.Log("ded");
         }
