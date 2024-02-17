@@ -9,7 +9,7 @@ public class BulletMover : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed = 15;
-    [SerializeField] private float maxTimer;
+    [SerializeField] private float maxTimer = 5;
     private float timer;
     // Start is called before the first frame update
     void Start()
@@ -31,9 +31,9 @@ public class BulletMover : MonoBehaviour
     private void autoDestruct()
     {
         timer += Time.deltaTime;
-        if( timer > maxTimer )
+        if( timer >= maxTimer )
         {
-
+            
             timer = 0;
             Destroy(this.gameObject);
         }
@@ -45,6 +45,10 @@ public class BulletMover : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(this.gameObject);
+        collision.SendMessage("takeDamageEnemy", 1);
+        Debug.Log("damage to enemy");
 
     }
+
+
 }

@@ -36,11 +36,15 @@ public class EnemyPointClick : MonoBehaviour
         faceRotation = Mathf.Atan2(direction.y, direction.x) *Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, faceRotation);
         transform.Translate(distance * Time.deltaTime * speed);
-
-
-
     }
 
+
+    public void takeDamageEnemy(int damage)
+    { 
+        health -= damage;
+        Debug.Log("enemy damage");
+    
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,10 +58,7 @@ public class EnemyPointClick : MonoBehaviour
         if ( health <= 0)
         {
             Destroy(this.gameObject);
-
-
-
-
+            Debug.Log("ded");
         }
     }
 

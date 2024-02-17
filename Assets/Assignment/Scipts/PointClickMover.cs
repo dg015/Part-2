@@ -117,7 +117,7 @@ public class PointClickMover : MonoBehaviour
             {
                 GoTo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 GoTo.z = 0;
-                Debug.Log("yoo");
+                
 
             }
         }

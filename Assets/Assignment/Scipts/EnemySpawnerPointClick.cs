@@ -29,7 +29,7 @@ public class EnemySpawnerPointClick : MonoBehaviour
 
     private void spawn()
     {
-        Instantiate(enemy);
+        Instantiate(enemy,transform.position, Quaternion.Euler(0, 0, 0));
     }
 
 
