@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  TimerLimit: 25
+  TimerLimit: 10
   enemy: {fileID: 5484580188189519221, guid: e3d92923104b9bd4aa76553f08e41d0f, type: 3}
