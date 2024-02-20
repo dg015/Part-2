@@ -46,7 +46,7 @@ public class BulletMover : MonoBehaviour
     {
         //when colides destroy the object and sends message to colider to deduct one health point from enemy
         Destroy(this.gameObject);
-        collision.SendMessage("takeDamageEnemy", 1);
+        collision.SendMessage("takeDamageEnemy", 1, SendMessageOptions.DontRequireReceiver);
         Debug.Log("damage to enemy");
 
     }

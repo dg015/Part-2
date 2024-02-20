@@ -55,8 +55,9 @@ public class EnemyPointClick : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //enemy deal damage to palyer upon colision 
-        collision.SendMessage("takeDamage", 1);
+        collision.SendMessage("takeDamage", 1,SendMessageOptions.DontRequireReceiver );
         Debug.Log("damage");
+
     }
 
     private void die()
