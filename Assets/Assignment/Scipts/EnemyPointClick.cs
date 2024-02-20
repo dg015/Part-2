@@ -15,6 +15,7 @@ public class EnemyPointClick : MonoBehaviour
     [SerializeField] private Vector3 direction;
     [SerializeField] private float faceRotation;
     [SerializeField] private ScoreManager Score;
+    [SerializeField] private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +40,7 @@ public class EnemyPointClick : MonoBehaviour
         direction = player.position - transform.position; // find direction between player and enemy ( distance as well)
         faceRotation = Mathf.Atan2(direction.y, direction.x) *Mathf.Rad2Deg; // get the angle from the enemy to player and apply as degrees
         transform.rotation = Quaternion.Euler(0f, 0f, faceRotation); // apply angle as rotation
-        transform.Translate(direction * Time.deltaTime * speed); // make enemy walk towards player based on speed
+        rb.MovePosition(transform.position + direction * Time.deltaTime * speed);// make enemy walk towards player based on speed
     }
 
 
