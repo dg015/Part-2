@@ -11,22 +11,12 @@ public class Ball : MonoBehaviour
     public Vector2 kickoffPosition = Vector2.zero;
     [SerializeField] private Rigidbody2D rb;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void goal()
     {
         Controller.score++;
         transform.position = kickoffPosition;
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
