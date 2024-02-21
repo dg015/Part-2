@@ -10,6 +10,8 @@ public class PlayerSoccer : MonoBehaviour
 
     [SerializeField] private Color col;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Rigidbody2D rb;
+    public float speed = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -50,4 +52,9 @@ public class PlayerSoccer : MonoBehaviour
         //PlayerSelected(true);
     }
 
+    public void move(Vector2 direction)
+    {
+        
+        rb.AddForce(direction * speed, ForceMode2D.Impulse );
+    }
 }
