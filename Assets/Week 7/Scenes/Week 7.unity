@@ -3672,6 +3672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8b665c7604a86469dec2e0aee9111e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreText: {fileID: 1882745618}
   kickoffPosition: {x: 0, y: 0}
   rb: {fileID: 777268257}
 --- !u!1001 &843656598
