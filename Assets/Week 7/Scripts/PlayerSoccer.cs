@@ -16,6 +16,7 @@ public class PlayerSoccer : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         col = spriteRenderer.color;
+        
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class PlayerSoccer : MonoBehaviour
        
     }
 
-    private void PlayerSelected(bool selected)
+    public void PlayerSelected(bool selected)
     {
 
        if (selected)
@@ -37,14 +38,16 @@ public class PlayerSoccer : MonoBehaviour
        }
     }
 
-    private void OnMouseUp()
+    /*
+     (private void OnMouseUp()
     {
         PlayerSelected(false);
     }
+    */
     private void OnMouseDown()
     {
-
-        PlayerSelected(true);
+        Controller.SetCurrentSelection(this);
+        //PlayerSelected(true);
     }
 
 }
