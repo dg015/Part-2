@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Diagnostics;
 
 public class Controller : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Controller : MonoBehaviour
     public float maxCharge;
     public Vector2 direction;
     public static PlayerSoccer selected { get; private set; }
+    public static int score; 
     public static void SetCurrentSelection(PlayerSoccer player)
     {
         if( selected != null)
