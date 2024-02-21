@@ -25,9 +25,7 @@ public class GoalkeeperController : MonoBehaviour
             float distance = direction.magnitude;
             if (goalRadius > (distance / 2f))
             {
-
                 goalkeeper.position = (Vector2)transform.position + direction.normalized * (distance / 2f);
-
             }
             else
             {
