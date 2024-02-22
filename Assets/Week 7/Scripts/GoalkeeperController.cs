@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class GoalkeeperController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GoalkeeperController : MonoBehaviour
     [SerializeField] private Transform goalkeeper;
     [SerializeField] private Vector2 direction;
     [SerializeField] private float goalRadius = 1.7f;
+    [SerializeField] private float step;
 
     // Start is called before the first frame update
 
@@ -25,13 +27,16 @@ public class GoalkeeperController : MonoBehaviour
             float distance = direction.magnitude;
             if (goalRadius > (distance / 2f))
             {
-                goalkeeper.position = (Vector2)transform.position + direction.normalized * (distance / 2f);
+                
+                goalkeeper.position = Vector3.MoveTowards(transform.position, (Vector2)transform.position + direction.normalized * (distance / 2f), step);
             }
             else
             {
-                goalkeeper.position = (Vector2)transform.position + direction.normalized * goalRadius;
+
+                goalkeeper.position = Vector3.MoveTowards(transform.position, (Vector2)transform.position + direction.normalized * goalRadius, step);
             }
         }
+        
     }
 
 }
